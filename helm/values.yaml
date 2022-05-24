@@ -10,7 +10,7 @@ postgres_host: udagram-db-instance.cwgxxsuh3kfb.ap-southeast-1.rds.amazonaws.com
 url: http://localhost:8100/
 
 aws-credential:
-db_usernamee:
+db_username:
 db_password:
 
 
