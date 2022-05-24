@@ -1,5 +1,5 @@
 image_repo: minhman1504
-tag: v1
+tag: latest
 
 aws_bucket: my-670966728611-bucket
 aws_profile: default
