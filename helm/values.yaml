@@ -9,7 +9,7 @@ postgres_db: app-database
 postgres_host: udagram-db-instance.cwgxxsuh3kfb.ap-southeast-1.rds.amazonaws.com:5432
 url: http://localhost:8100/
 
-aws-credential: fdsfdsfdsfdsfsdfsdfdsfsdfdsfegrhdbdgfdgdfgfdgdfhddgd
+aws_credential: W2RlZmF1bHRdCmF3c19hY2Nlc3Nfa2V5X2lkID0gQUtJQVIyQ1NCQzZWTFFSU0FHNUUKYXdzX3NlY3JldF9hY2Nlc3Nfa2V5ID0gMThScU52UDgrRjA0bC9DWE56MU5VNGJrVk1BMkl3UWlpbzBsTTRGaQ==
 db_username: cm9vdA==
 db_password: cm9vdDEyMzQ=
 
