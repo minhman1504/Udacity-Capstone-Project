@@ -18,7 +18,7 @@ spec:
         app: udagram       
     spec:
       containers:
-      - image: {{ .Values.image_repo }}/udagram-frontend:{{ .Values.tag-frontend }}
+      - image: {{ .Values.image_repo }}/udagram-frontend:{{ .Values.tagfrontend }}
         name: frontend
         imagePullPolicy: Always          
         ports:

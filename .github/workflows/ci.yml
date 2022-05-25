@@ -57,7 +57,7 @@ jobs:
         name: Update tag Frontend
         run: |
           new_tag=v.0.0.${{ github.run_attempt }}
-          current_tag=$(cat ./helm/values.yaml | grep tag-frontend: | awk '{print $2}')
+          current_tag=$(cat ./helm/values.yaml | grep tagfrontend: | awk '{print $2}')
           sed -i "s/$current_tag/$new_tag/" ./helm/values.yaml
       -
         name: Commit and push changes
