@@ -8,8 +8,6 @@ export const environment = {
   apiHost: 'http://adb64a2643f7d45389f05585a243cd62-2002616473.ap-southeast-1.elb.amazonaws.com:8080/api/v0'
 };
 
-/// addd command
-
 
 
 ///
