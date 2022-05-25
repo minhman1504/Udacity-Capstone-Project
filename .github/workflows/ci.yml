@@ -24,20 +24,20 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      # -
-      #   name: Build and push udagram-api-feed
-      #   uses: docker/build-push-action@v3
-      #   with:
-      #     context: ./udagram-api-feed
-      #     push: true
-      #     tags: ${{ secrets.DOCKERHUB_USERNAME }}/udagram-api-feed:latest, ${{ secrets.DOCKERHUB_USERNAME }}/udagram-api-feed:v.0.0.${{ github.run_attempt }}
-      # -
-      #   name: Build and push udagram-api-user
-      #   uses: docker/build-push-action@v3
-      #   with:
-      #     context: ./udagram-api-user
-      #     push: true
-      #     tags: ${{ secrets.DOCKERHUB_USERNAME }}/udagram-api-user:latest, ${{ secrets.DOCKERHUB_USERNAME }}/udagram-api-user:v.0.0.${{ github.run_attempt }}
+      -
+        name: Build and push udagram-api-feed
+        uses: docker/build-push-action@v3
+        with:
+          context: ./udagram-api-feed
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/udagram-api-feed:latest, ${{ secrets.DOCKERHUB_USERNAME }}/udagram-api-feed:${{ github.sha }}
+      -
+        name: Build and push udagram-api-user
+        uses: docker/build-push-action@v3
+        with:
+          context: ./udagram-api-user
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/udagram-api-user:latest, ${{ secrets.DOCKERHUB_USERNAME }}/udagram-api-user:${{ github.sha }}
       -
         name: Build and push udagram-frontend
         uses: docker/build-push-action@v3
@@ -45,13 +45,13 @@ jobs:
           context: ./udagram-frontend
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/udagram-frontend:latest, ${{ secrets.DOCKERHUB_USERNAME }}/udagram-frontend:${{ github.sha }}
-      # -
-      #   name: Build and push udagram-reverseproxy
-      #   uses: docker/build-push-action@v3
-      #   with:
-      #     context: ./udagram-reverseproxy
-      #     push: true
-      #     tags: ${{ secrets.DOCKERHUB_USERNAME }}/udagram-reverseproxy:latest, ${{ secrets.DOCKERHUB_USERNAME }}/udagram-reverseproxy:v.0.0.${{ github.run_attempt }}
+      -
+        name: Build and push udagram-reverseproxy
+        uses: docker/build-push-action@v3
+        with:
+          context: ./udagram-reverseproxy
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/udagram-reverseproxy:latest, ${{ secrets.DOCKERHUB_USERNAME }}/udagram-reverseproxy:${{ github.sha }}
 
       - 
         name: Update tag Frontend
