@@ -45,10 +45,10 @@ jobs:
           context: ./udagram-frontend
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/udagram-frontend:latest, ${{ secrets.DOCKERHUB_USERNAME }}/udagram-frontend:v.0.0.${{ github.run_attempt }}
-      -
-        name: Build and push udagram-reverseproxy
-        uses: docker/build-push-action@v3
-        with:
-          context: ./udagram-reverseproxy
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/udagram-reverseproxy:latest, ${{ secrets.DOCKERHUB_USERNAME }}/udagram-reverseproxy:v.0.0.${{ github.run_attempt }}
+      # -
+      #   name: Build and push udagram-reverseproxy
+      #   uses: docker/build-push-action@v3
+      #   with:
+      #     context: ./udagram-reverseproxy
+      #     push: true
+      #     tags: ${{ secrets.DOCKERHUB_USERNAME }}/udagram-reverseproxy:latest, ${{ secrets.DOCKERHUB_USERNAME }}/udagram-reverseproxy:v.0.0.${{ github.run_attempt }}
