@@ -1,6 +1,7 @@
 image_repo: minhman1504
 tag: latest
-tagfrontend: latest
+tagfrontend: changeme
+
 
 aws_bucket: my-670966728611-bucket
 aws_profile: default
