@@ -5,7 +5,6 @@ tag:
   backenduser: user-tag-df6dsf6sd
   reverseproxy: reverseproxy-tag-dfhsdb2342jb2
 
-
 aws_bucket: my-670966728611-bucket
 aws_profile: default
 aws_region: ap-southeast-1
