@@ -58,7 +58,7 @@ jobs:
         run: |
           new_tag=v.0.0.${{ github.run_attempt }}
           current_tag=$(cat ./helm/values.yaml | grep tag-frontend: | awk '{print $2}')
-          sed -i "s/$current_tag/$new_tag/"
+          sed -i "s/$current_tag/$new_tag/" ./helm/values.yaml
       -
         name: Commit and push changes
         uses: devops-infra/action-commit-push@v0.3
