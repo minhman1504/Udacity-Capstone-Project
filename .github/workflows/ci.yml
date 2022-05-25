@@ -44,7 +44,7 @@ jobs:
         with:
           context: ./udagram-frontend
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/udagram-frontend:latest, ${{ secrets.DOCKERHUB_USERNAME }}/udagram-frontend:${GITHUB_SHA}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/udagram-frontend:latest, ${{ secrets.DOCKERHUB_USERNAME }}/udagram-frontend:${{ github.sha }}
       # -
       #   name: Build and push udagram-reverseproxy
       #   uses: docker/build-push-action@v3
@@ -56,7 +56,7 @@ jobs:
       - 
         name: Update tag Frontend
         run: |
-          new_tag=${GITHUB_SHA}
+          new_tag=${{ github.sha }}
           current_tag=$(cat ./helm/values.yaml | grep tagfrontend: | awk '{print $2}')
           sed -i "s/$current_tag/$new_tag/" ./helm/values.yaml
       -
