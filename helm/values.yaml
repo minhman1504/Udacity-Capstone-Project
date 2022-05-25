@@ -1,6 +1,6 @@
 image_repo: minhman1504
-tag: latest
-tag-frontend: latest
+tag: v.0.0.1
+tag-frontend: v.0.0.1
 
 aws_bucket: my-670966728611-bucket
 aws_profile: default
