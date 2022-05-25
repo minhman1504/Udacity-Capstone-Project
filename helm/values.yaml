@@ -1,7 +1,7 @@
 image_repo: minhman1504
 
 tag: 
-  frontend: frontend-tag-213wjrjwri12
+  frontend: frontend-tag-eadea43
   backendfeed: feed-tag-ea53321
   backenduser: user-tag-948441b
   reverseproxy: reverseproxy-tag-f98ae38
