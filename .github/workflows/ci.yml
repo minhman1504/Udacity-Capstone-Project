@@ -44,7 +44,7 @@ jobs:
         with:
           context: ./udagram-frontend
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/udagram-frontend:latest, ${{ secrets.DOCKERHUB_USERNAME }}/udagram-frontend:${{ git rev-parse --short $GITHUB_SHA }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/udagram-frontend:latest, ${{ secrets.DOCKERHUB_USERNAME }}/udagram-frontend:${{ run "git rev-parse --short $GITHUB_SHA" }}
       # -
       #   name: Build and push udagram-reverseproxy
       #   uses: docker/build-push-action@v3
