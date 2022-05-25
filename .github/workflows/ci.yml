@@ -24,20 +24,20 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      -
-        name: Build and push udagram-api-feed
-        uses: docker/build-push-action@v3
-        with:
-          context: ./udagram-api-feed
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/udagram-api-feed:latest, ${{ secrets.DOCKERHUB_USERNAME }}/udagram-api-feed:v.0.0.${{ github.run_attempt }}
-      -
-        name: Build and push udagram-api-user
-        uses: docker/build-push-action@v3
-        with:
-          context: ./udagram-api-user
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/udagram-api-user:latest, ${{ secrets.DOCKERHUB_USERNAME }}/udagram-api-user:v.0.0.${{ github.run_attempt }}
+      # -
+      #   name: Build and push udagram-api-feed
+      #   uses: docker/build-push-action@v3
+      #   with:
+      #     context: ./udagram-api-feed
+      #     push: true
+      #     tags: ${{ secrets.DOCKERHUB_USERNAME }}/udagram-api-feed:latest, ${{ secrets.DOCKERHUB_USERNAME }}/udagram-api-feed:v.0.0.${{ github.run_attempt }}
+      # -
+      #   name: Build and push udagram-api-user
+      #   uses: docker/build-push-action@v3
+      #   with:
+      #     context: ./udagram-api-user
+      #     push: true
+      #     tags: ${{ secrets.DOCKERHUB_USERNAME }}/udagram-api-user:latest, ${{ secrets.DOCKERHUB_USERNAME }}/udagram-api-user:v.0.0.${{ github.run_attempt }}
       -
         name: Build and push udagram-frontend
         uses: docker/build-push-action@v3
@@ -52,3 +52,16 @@ jobs:
       #     context: ./udagram-reverseproxy
       #     push: true
       #     tags: ${{ secrets.DOCKERHUB_USERNAME }}/udagram-reverseproxy:latest, ${{ secrets.DOCKERHUB_USERNAME }}/udagram-reverseproxy:v.0.0.${{ github.run_attempt }}
+
+      - 
+        name: Update tag Frontend
+        run: |
+          new_tag=v.0.0.${{ github.run_attempt }}
+          current_tag=$(cat ./helm/values.yaml | grep tag-frontend: | awk '{print $2}')
+          sed -i "s/$current_tag/$new_tag/"
+      -
+        name: Commit and push changes
+        uses: devops-infra/action-commit-push@v0.3
+        with:
+          github_token: ${{ secrets.GIT_TOKEN }}
+          commit_message: CI Version updated
