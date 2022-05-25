@@ -1,7 +1,9 @@
 image_repo: minhman1504
-tag: latest
-tagfrontend: 3c1aa93504134e4e2c743c0753f8d4b1877a86f0
-
+tag: 
+  frontend: frontend-tag-213wjrjwri12
+  backendfeed: feed-tag-2b4h324j
+  backenduser: user-tag-df6dsf6sd
+  reverseproxy: reverseproxy-tag-dfhsdb2342jb2
 
 aws_bucket: my-670966728611-bucket
 aws_profile: default
