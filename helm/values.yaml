@@ -1,6 +1,6 @@
 image_repo: minhman1504
 tag: latest
-tagfrontend: v.0.0.2
+tagfrontend: e34f8d6d8682bb447b2bab4767a091d7b9cdf5e8
 
 
 aws_bucket: my-670966728611-bucket
