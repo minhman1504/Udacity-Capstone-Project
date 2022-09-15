@@ -45,7 +45,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
         run: |
-          git clone https://minhman1504:$API_TOKEN_GITHUB@github.com/minhman1504/Udacity-Capstone-Project-Config.git
+          echo https://minhman1504:${{ secrets.API_TOKEN_GITHUB }}@github.com/minhman1504/Udacity-Capstone-Project-Config.git
+          git clone https://minhman1504:${{ secrets.API_TOKEN_GITHUB }}@github.com/minhman1504/Udacity-Capstone-Project-Config.git
           cd Udacity-Capstone-Project-Config
           git config user.name "minhman1504"
           git config user.email "minhman1504@gmail.com"
