@@ -43,12 +43,15 @@ jobs:
       - 
         name: Update tag to Helm values
         run: |
+          echo https://minhman1504:${{ secrets.API_TOKEN_GITHUB }}@github.com/minhman1504/Udacity-Capstone-Project-Config.git
+          git clone https://minhman1504:${{ secrets.API_TOKEN_GITHUB }}@github.com/minhman1504/Udacity-Capstone-Project-Config.git
+          cd Udacity-Capstone-Project-Config
+          git config user.name "minhman1504"
+          git config user.email "minhman1504@gmail.com"
+          
           new_tag=${{ steps.vars.outputs.sha_short }}
           current_tag=$(cat ./helm/values.yaml | grep backenduser: | awk '{print $2}')
           sed -i "s/$current_tag/$new_tag/" ./helm/values.yaml
-      -
-        name: Commit and push changes
-        uses: devops-infra/action-commit-push@v0.3
-        with:
-          github_token: ${{ secrets.GIT_TOKEN }}
-          commit_message: CI Version updated
+          git add .
+          git commit -m "update new udagram-api-user tag $current_tag"
+          git push origin master

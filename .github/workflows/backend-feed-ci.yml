@@ -42,8 +42,6 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/udagram-api-feed:latest, ${{ secrets.DOCKERHUB_USERNAME }}/udagram-api-feed:${{ steps.vars.outputs.sha_short }}
       - 
         name: Update tag to Helm values
-        env:
-          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
         run: |
           echo https://minhman1504:${{ secrets.API_TOKEN_GITHUB }}@github.com/minhman1504/Udacity-Capstone-Project-Config.git
           git clone https://minhman1504:${{ secrets.API_TOKEN_GITHUB }}@github.com/minhman1504/Udacity-Capstone-Project-Config.git
